@@ -6,13 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class catergoryController {
+public class catergoryController{
 
-    @org.springframework.beans.factory.annotation.Autowired(required=true)
+    @Autowired
     categoryService categoryService;
 
-    @GetMapping
+    @GetMapping("/category/{id}")
     private Category getCategory(@PathVariable("id") int id){
+
         return categoryService.getCategoryById(id);
     }
 
@@ -22,6 +23,4 @@ public class catergoryController {
         categoryService.saveOrUpdate(category);
         return category.getName();
     }
-
-
 }

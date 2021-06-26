@@ -13,13 +13,13 @@ public class assetController {
     @Autowired
     assetService assetService;
 
-    @GetMapping
+    @GetMapping("/asset")
     private List<asset> getAllasset()
     {
 
         return assetService.getAllAsset();
     }
-
+    @GetMapping("/asset/{id}")
     private asset getAsset(@PathVariable("id") String name)
     {
 

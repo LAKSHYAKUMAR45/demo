@@ -6,7 +6,6 @@ import javax.persistence.Id;
 import javax.persistence.Column;
 
 @Entity
-
 @Table
 public class Category {
     @Id
